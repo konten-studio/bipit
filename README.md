@@ -4,7 +4,7 @@
 
 <sub>KONTEN STUDIO PRESENTS</sub>
 
-# bipit
+<img src="assets/bipit-header.jpg" alt="bipit — turn your agent session into a build-in-public post" width="820">
 
 <h3>The session already happened. <strong>bip-it.</strong></h3>
 
