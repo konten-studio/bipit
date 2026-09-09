@@ -4,14 +4,14 @@
 
 <sub>KONTEN STUDIO PRESENTS</sub>
 
-```text
-      ██████╗ ██╗██████╗ ██╗████████╗
-      ██╔══██╗██║██╔══██╗██║╚══██╔══╝
-      ██████╔╝██║██████╔╝██║   ██║
-      ██╔══██╗██║██╔═══╝ ██║   ██║
-      ██████╔╝██║██║     ██║   ██║
-      ╚═════╝ ╚═╝╚═╝     ╚═╝   ╚═╝
-```
+<pre>
+██████╗   ██╗  ██████╗   ██╗  ████████╗
+██╔══██╗  ██║  ██╔══██╗  ██║  ╚══██╔══╝
+██████╔╝  ██║  ██████╔╝  ██║     ██║
+██╔══██╗  ██║  ██╔═══╝   ██║     ██║
+██████╔╝  ██║  ██║       ██║     ██║
+╚═════╝   ╚═╝  ╚═╝       ╚═╝     ╚═╝
+</pre>
 
 <h3>The session already happened. <strong>bip-it.</strong></h3>
 
@@ -21,7 +21,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-v1-8250df.svg)](#roadmap)
-[![Agents](https://img.shields.io/badge/agents-Claude%20Code%20·%20Codex%20·%20opencode%20·%20Cursor-0b7285.svg)](#installation)
+[![Agents](https://img.shields.io/badge/agents-Claude_Code_%7C_Codex_%7C_opencode_%7C_Cursor-0b7285.svg)](#installation)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
 </div>
