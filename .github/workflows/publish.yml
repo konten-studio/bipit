@@ -1,11 +1,16 @@
 name: Publish
 
-# Publishes bipit to npm when a GitHub Release is published.
-# Auth is npm Trusted Publishing (OIDC) — no NPM_TOKEN secret required.
-# One-time prerequisite: the package must already exist on npm (bootstrap the
-# first version with a token), then configure the trusted publisher at
-# https://www.npmjs.com/package/bipit/access -> "Trusted Publisher":
-#   GitHub Actions | owner: konten-studio | repo: bipit | workflow: publish.yml
+# Publishes bipit to npm on a GitHub Release (or manual dispatch).
+#
+# Auth: npm Trusted Publishing (OIDC) — no long-lived secret.
+# Bootstrap only: npm will not let you configure a trusted publisher until the
+# package exists, so the FIRST publish needs a token. Add a short-lived granular
+# token as the repo secret NPM_TOKEN, run this workflow once, then:
+#   1. configure the trusted publisher at
+#      https://www.npmjs.com/package/bipit/access -> "Trusted Publisher"
+#      (GitHub Actions | owner: konten-studio | repo: bipit | workflow: publish.yml)
+#   2. delete the NPM_TOKEN secret and revoke the token
+# Every release after that authenticates via OIDC with nothing stored.
 
 on:
   release:
@@ -21,10 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # No registry-url here on purpose: setup-node's .npmrc auth stub would
+      # shadow OIDC. Registry + access come from package.json publishConfig.
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          registry-url: "https://registry.npmjs.org"
 
       # Trusted publishing needs npm >= 11.5.1
       - run: npm install -g npm@latest
@@ -41,4 +47,15 @@ jobs:
 
       - run: npm test
 
-      - run: npm publish
+      - name: Publish via token (bootstrap)
+        if: ${{ secrets.NPM_TOKEN != '' }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken "${NPM_TOKEN}"
+          npm publish
+          npm config delete //registry.npmjs.org/:_authToken
+
+      - name: Publish via OIDC (trusted publishing)
+        if: ${{ secrets.NPM_TOKEN == '' }}
+        run: npm publish
