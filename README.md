@@ -94,7 +94,7 @@ you decide.
 
 ```text
 /plugin marketplace add konten-studio/bipit
-/plugin install bipit
+/plugin install bipit@bipit
 ```
 
 **Any agent — clone and run the installer**

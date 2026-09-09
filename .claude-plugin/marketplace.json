@@ -1,10 +1,10 @@
 {
   "name": "bipit",
-  "owner": { "name": "Konten Studio" },
+  "owner": { "name": "Konten Studio", "url": "https://github.com/konten-studio" },
   "plugins": [
     {
       "name": "bipit",
-      "source": { "source": "github", "repo": "konten-studio/bipit" },
+      "source": ".",
       "description": "Turn your current agent session into a build-in-public post, thread, or article."
     }
   ]
