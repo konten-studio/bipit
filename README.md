@@ -16,8 +16,8 @@
 **EN** — You shipped something good this session. bipit turns it into an honest build-in-public post — in your voice, before you've closed the terminal.
 **ID** — Lo baru ngerjain sesuatu yang bagus sesi ini. bipit ubah itu jadi post build-in-public yang jujur — pakai gaya nulis lo, sebelum terminal-nya lo tutup.
 
-[![npm version](https://img.shields.io/npm/v/bipit.svg)](https://www.npmjs.com/package/bipit)
-[![npm downloads](https://img.shields.io/npm/dm/bipit.svg)](https://www.npmjs.com/package/bipit)
+[![npm version](https://img.shields.io/npm/v/@konten-studio/bipit.svg)](https://www.npmjs.com/package/@konten-studio/bipit)
+[![npm downloads](https://img.shields.io/npm/dm/@konten-studio/bipit.svg)](https://www.npmjs.com/package/@konten-studio/bipit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![status: v1](https://img.shields.io/badge/status-v1-purple.svg)](docs/superpowers/specs/2026-09-09-bipit-v1-design.md)
 
@@ -51,7 +51,7 @@ session you're already in, use bipit.
 ## 60-second quickstart
 
 ```bash
-npx bipit --agent claude          # or: codex | cursor | opencode | all
+npx @konten-studio/bipit --agent claude     # or: codex | cursor | opencode | all
 ```
 
 Then, inside your agent:
@@ -133,7 +133,7 @@ symlink, `--dry-run` to preview. pi, agy, and anything else that reads
 ## Uninstall
 
 ```bash
-npx bipit uninstall --agent claude
+npx @konten-studio/bipit uninstall --agent claude
 ```
 
 Removes exactly what the installer added (tracked in a manifest).

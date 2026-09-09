@@ -1,5 +1,5 @@
 {
-  "name": "bipit",
+  "name": "@konten-studio/bipit",
   "version": "0.1.0",
   "description": "Turn your current agent session into a build-in-public post, thread, or article — a portable skill for Claude Code, Codex, opencode, and Cursor.",
   "bin": {

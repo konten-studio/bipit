@@ -7,7 +7,7 @@ name: Publish
 # package exists, so the FIRST publish needs a token. Add a short-lived granular
 # token as the repo secret NPM_TOKEN, run this workflow once, then:
 #   1. configure the trusted publisher at
-#      https://www.npmjs.com/package/bipit/access -> "Trusted Publisher"
+#      https://www.npmjs.com/package/@konten-studio/bipit/access -> "Trusted Publisher"
 #      (GitHub Actions | owner: konten-studio | repo: bipit | workflow: publish.yml)
 #   2. delete the NPM_TOKEN secret and revoke the token
 # Every release after that authenticates via OIDC with nothing stored.
