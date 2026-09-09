@@ -1,0 +1,44 @@
+name: Publish
+
+# Publishes bipit to npm when a GitHub Release is published.
+# Auth is npm Trusted Publishing (OIDC) — no NPM_TOKEN secret required.
+# One-time prerequisite: the package must already exist on npm (bootstrap the
+# first version with a token), then configure the trusted publisher at
+# https://www.npmjs.com/package/bipit/access -> "Trusted Publisher":
+#   GitHub Actions | owner: konten-studio | repo: bipit | workflow: publish.yml
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+
+      # Trusted publishing needs npm >= 11.5.1
+      - run: npm install -g npm@latest
+
+      - name: Version matches release tag
+        if: github.event_name == 'release'
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$pkg" ]; then
+            echo "release tag ($tag) does not match package.json version ($pkg)" >&2
+            exit 1
+          fi
+
+      - run: npm test
+
+      - run: npm publish
