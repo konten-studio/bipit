@@ -23,6 +23,8 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -48,14 +50,12 @@ jobs:
       - run: npm test
 
       - name: Publish via token (bootstrap)
-        if: ${{ secrets.NPM_TOKEN != '' }}
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: ${{ env.NPM_TOKEN != '' }}
         run: |
           npm config set //registry.npmjs.org/:_authToken "${NPM_TOKEN}"
           npm publish
           npm config delete //registry.npmjs.org/:_authToken
 
       - name: Publish via OIDC (trusted publishing)
-        if: ${{ secrets.NPM_TOKEN == '' }}
+        if: ${{ env.NPM_TOKEN == '' }}
         run: npm publish
