@@ -1,0 +1,47 @@
+{
+  "name": "bipit",
+  "version": "0.1.0",
+  "description": "Turn your current agent session into a build-in-public post, thread, or article — a portable skill for Claude Code, Codex, opencode, and Cursor.",
+  "bin": {
+    "bipit": "bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    ".claude-plugin/",
+    ".codex-plugin/",
+    "adapters/",
+    "scripts/",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "test": "node --test && sh scripts/test/run.sh"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "build-in-public",
+    "content",
+    "social",
+    "writing",
+    "agent-skill",
+    "claude-skill",
+    "codex",
+    "opencode",
+    "cursor"
+  ],
+  "author": "Konten Studio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konten-studio/bipit.git"
+  },
+  "homepage": "https://github.com/konten-studio/bipit#readme",
+  "bugs": {
+    "url": "https://github.com/konten-studio/bipit/issues"
+  }
+}
