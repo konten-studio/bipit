@@ -88,31 +88,35 @@ you decide.
 
 ### Installation
 
-> npm and the skill marketplaces are coming. For now, install from this repo.
+bipit installs from this repo. Pick one of two ways.
 
-**Claude Code — plugin marketplace**
-
-```text
-/plugin marketplace add konten-studio/bipit
-/plugin install bipit@bipit
-```
-
-**Any agent — clone and run the installer**
+**1. Clone and run the installer**
 
 ```bash
 git clone https://github.com/konten-studio/bipit
 sh bipit/scripts/install.sh --agent claude    # claude | codex | cursor | opencode
 ```
 
-Add `--scope project` to install into the current repository instead of your
-home directory, or `--copy` to copy the skill instead of symlinking it.
+This symlinks `skills/bipit/` into your agent's skill directory. Keep the clone
+around (the symlink points at it) and `git pull` for updates — or pass `--copy`
+to copy the skill in and throw the clone away. `--scope project` installs into
+the current repository instead of your home directory.
 
-**Manual**
+Uninstall with `sh bipit/scripts/uninstall.sh --agent claude`.
 
-Copy `skills/bipit/` into your agent's skills folder — one of `~/.claude/skills/`,
-`~/.codex/skills/`, `~/.cursor/skills/`, `~/.config/opencode/skills/`.
+**2. Copy the folder by hand**
 
-To remove it later: `sh bipit/scripts/uninstall.sh --agent claude`.
+Copy `skills/bipit/` from this repo into your agent's skills directory:
+
+| Agent | Directory |
+|---|---|
+| Claude Code | `~/.claude/skills/` |
+| Codex | `~/.codex/skills/` |
+| Cursor | `~/.cursor/skills/` |
+| opencode | `~/.config/opencode/skills/` |
+
+Anything that reads `AGENTS.md` (`pi`, `agy`, …) picks bipit up from a clone
+directly — no install step.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
