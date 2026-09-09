@@ -1,0 +1,16 @@
+{
+  "name": "bipit",
+  "version": "0.1.0",
+  "description": "Turn your current agent session into a build-in-public post, thread, or article.",
+  "author": { "name": "Konten Studio" },
+  "repository": "https://github.com/konten-studio/bipit",
+  "license": "MIT",
+  "keywords": [
+    "build-in-public",
+    "content",
+    "social",
+    "writing",
+    "agent-skill",
+    "claude-skill"
+  ]
+}

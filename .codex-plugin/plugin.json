@@ -1,0 +1,18 @@
+{
+  "name": "bipit",
+  "version": "0.1.0",
+  "description": "Turn your current agent session into a build-in-public post.",
+  "author": { "name": "Konten Studio" },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "bipit",
+    "shortDescription": "bip it — session to post.",
+    "longDescription": "Reads your current coding session and drafts an honest build-in-public post, thread, or article in your saved writing voice. Draft-only: you approve before anything is finalized. Never posts anywhere.",
+    "developerName": "Konten Studio",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": [
+      "Turn what we did this session into a build-in-public post."
+    ]
+  }
+}
