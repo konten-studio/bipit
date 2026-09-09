@@ -13,11 +13,9 @@ content: a social post, a thread, or a longer article.
 
 The name: **bip** (build in public) + **it** → *bip-it!*
 
-bipit is a **lighter, independent sibling** of `bipos`. bipos is a local Python
-engine with its own LLM pipeline, a daemon, and a TUI. bipit has **no code
-pipeline and no daemon** — it rides entirely inside the user's agent, which does
-the reading and writing by following the skill's instructions. They may share
-ideas and downstream skills but share no code.
+bipit has **no code pipeline and no daemon** — it rides entirely inside the
+user's agent, which does the reading and writing by following the skill's
+instructions.
 
 ## Goals
 
